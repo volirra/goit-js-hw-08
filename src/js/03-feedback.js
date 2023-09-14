@@ -25,11 +25,16 @@ else
 }
 function onFormSubmit(evt) {
     evt.preventDefault();
-    if (localData.email === "" || localData.message === ""){
-        console.log("Будь ласка, заповніть поля!")
-     }
-     console.log(`email: ${refs.input.value}, message: ${refs.textarea.value}`);
-     evt.currentTarget.reset();
-     localStorage.removeItem("feedback-form-state");
-     formData = {email:"", message:""};
+    console.log("Будь ласка, заповніть поля!")
+    if (localData.email === "" || localData.message === "") {
+         return alert("Будь ласка, заповніть поля!");
+        }
+    console.log(`email: ${refs.input.value}, message: ${refs.textarea.value}`);
+    evt.currentTarget.reset();
+    localStorage.removeItem("feedback-form-state");
+    formData = { email: "", message: "" };
+
+    localStorage.removeItem(LOCAL_KEY);
+    e.currentTarget.reset();
+    dataForm = {};
 }
