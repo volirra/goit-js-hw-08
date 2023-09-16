@@ -1,3 +1,4 @@
+const LOCAL_KEY = 'feedback-form-state';
 import throttle from "lodash.throttle";
 const refs = {
     input: document.querySelector(".feedback-form input"),
