@@ -12,7 +12,6 @@ function pushFormData(event) {
     formData[event.target.name] = event.target.value;
     localStorage.setItem("feedback-form-state", JSON.stringify(formData));
 }
-const LOCAL_KEY = "feedback-form-state";
 const localData = JSON.parse(localStorage.getItem("feedback-form-state"));
 populatteTextArea();
 function populatteTextArea() {
@@ -32,11 +31,10 @@ function onFormSubmit(evt) {
          return alert("Будь ласка, заповніть поля!");
         }
     console.log(`email: ${refs.input.value}, message: ${refs.textarea.value}`);
-    evt.currentTarget.reset(LOCAL_KEY);
+    evt.currentTarget.reset();
     localStorage.removeItem("feedback-form-state");
     formData = { email: "", message: "" };
-
-    localStorage.removeItem(LOCAL_KEY);
+        localStorage.removeItem(LOCAL_KEY);
     e.currentTarget.reset();
     dataForm = {};
 }
