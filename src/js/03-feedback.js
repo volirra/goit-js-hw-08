@@ -12,7 +12,7 @@ function pushFormData(event) {
     formData[event.target.name] = event.target.value;
     localStorage.setItem("feedback-form-state", JSON.stringify(formData));
 }
-const localData = JSON.parse(localStorage.getItem("feedback-form-state"));
+const localData = JSON.parse(localStorage.getItem(LOCAL_KEY));
 populatteTextArea();
 function populatteTextArea() {
     if(localData.email && localData.message){
