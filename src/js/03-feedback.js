@@ -32,9 +32,8 @@ function onFormSubmit(evt) {
         }
     console.log(`email: ${refs.input.value}, message: ${refs.textarea.value}`);
     evt.currentTarget.reset();
-    localStorage.removeItem("feedback-form-state");
+    localStorage.removeItem(LOCAL_KEY);
     formData = { email: "", message: "" };
-        localStorage.removeItem(LOCAL_KEY);
-    e.currentTarget.reset();
+       e.currentTarget.reset();
     dataForm = {};
 }
